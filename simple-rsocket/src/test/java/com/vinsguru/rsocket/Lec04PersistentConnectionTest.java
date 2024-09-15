@@ -44,7 +44,7 @@ public class Lec04PersistentConnectionTest {
 
 
         System.out.println("going to sleep");
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         System.out.println("woke up");
 
         Flux<String> flux2 =  this.rSocketClient.requestStream(Mono.just(DefaultPayload.create("")))

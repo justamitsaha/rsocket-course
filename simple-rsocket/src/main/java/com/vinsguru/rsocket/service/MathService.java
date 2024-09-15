@@ -16,6 +16,7 @@ public class MathService implements RSocket {
 
     @Override
     public Mono<Void> fireAndForget(Payload payload) {
+        System.out.println("Receiving : " +payload.getDataUtf8());
         System.out.println("Receiving : " + ObjectUtil.toObject(payload, RequestDto.class));
         return Mono.empty();
     }

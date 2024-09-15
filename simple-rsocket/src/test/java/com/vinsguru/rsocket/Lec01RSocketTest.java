@@ -8,6 +8,7 @@ import io.rsocket.Payload;
 import io.rsocket.RSocket;
 import io.rsocket.core.RSocketConnector;
 import io.rsocket.transport.netty.client.TcpClientTransport;
+import io.rsocket.util.DefaultPayload;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -32,6 +33,7 @@ public class Lec01RSocketTest {
     @Test
     public void fireAndForget(){
 
+        //Payload payload = DefaultPayload.create("Hello World");
         Payload payload = ObjectUtil.toPayload(new RequestDto(5));
         Mono<Void> mono = this.rSocket.fireAndForget(payload);
 

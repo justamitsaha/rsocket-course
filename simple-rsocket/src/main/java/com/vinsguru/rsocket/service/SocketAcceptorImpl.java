@@ -14,7 +14,9 @@ public class SocketAcceptorImpl implements SocketAcceptor {
             return Mono.just(new MathService());
         else
             return Mono.just(new FreeService());
-        //Mono.fromCallable(MathService::new);
+        //return  Mono.fromCallable(()->new BatchJobService(rSocket));
+        //return  Mono.fromCallable(FastProducerService::new);
+        //return Mono.fromCallable(MathService::new);
         //return Mono.fromCallable(FastProducerService::new);
     }
 
